@@ -1,31 +1,51 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NFC, Ndef } from '@ionic-native/nfc';
+import { Subscription } from 'rxjs/Rx';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  public patientData:any = {name:'Erik',birthdate:'10/09/1992',alergies:'Penicillin'};
-  constructor(public navCtrl: NavController,private nfc: NFC, private ndef: Ndef) {
-      this.nfc.addNdefListener(() => {
-        console.log('successfully attached ndef listener');
-      }, (err) => {
-        console.log('error attaching ndef listener', err);
-      }).subscribe((event) => {
-        console.log('received ndef message. the tag contains: ', event.tag);
-        console.log('decoded tag id', this.nfc.bytesToHexString(event.tag.id));
-      
-        let message = this.ndef.textRecord('Hello world');
-        this.nfc.share([message]).then(this.onSuccess).catch(this.onError);
-      });
-  }
-  onSuccess(data){
-    console.log(data);
-  }
-  onError(data){
-    console.log(data);
-  }
+  public readingTag:   boolean   = true;
+  public ndefMsg:      string    = '';
+  public subscriptions: Array<Subscription> = new Array<Subscription>();
   
+  constructor(public navCtrl: NavController, private nfc: NFC, private ndef: Ndef,private alertCtrl: AlertController) { 
+    let _self = this;
+    this.subscriptions.push(this.nfc.addNdefListener()
+      .subscribe(data => {
+        console.log(data);
+        _self.navCtrl.setRoot('TabsPage');
+         // let payload = data.tag.ndefMessage[0].payload;
+          //let tagContent = this.nfc.bytesToString(payload).substring(3);
+          //this.readingTag = false;
+
+          
+
+          console.log("TAG LOADED");
+         // console.log(tagContent);
+
+        
+      },
+      err => {
+        let alert = this.alertCtrl.create({
+          title: 'Error Reading',
+          subTitle: err ,
+          buttons: ['Ok']
+        });
+        alert.present();
+      })
+    );
+  }
+
+  ionViewWillLeave() {
+    this.subscriptions.forEach(sub => {
+      sub.unsubscribe();
+    });
+  }
+ 
+
 }

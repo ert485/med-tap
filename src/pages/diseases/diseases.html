@@ -12,7 +12,7 @@
 
         <ion-item *ngFor="let disease of diseases; let i = index">
           <ion-label>{{disease}}</ion-label>
-          <ion-checkbox [(ngModel)]="checkedDiseases[i]"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="checkedDiseases[i]" ></ion-checkbox>
         </ion-item>
       </ion-list>
       <button ion-button full (click)="saveToCard()">Save to Card</button>

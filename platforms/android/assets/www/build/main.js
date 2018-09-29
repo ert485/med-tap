@@ -65,8 +65,10 @@ var TabsPage = /** @class */ (function () {
         this.tab3Root = __WEBPACK_IMPORTED_MODULE_1__alergies_alergies__["a" /* AlergiesPage */];
         this.tab4Root = __WEBPACK_IMPORTED_MODULE_2__diseases_diseases__["a" /* DiseasesPage */];
     }
+    TabsPage.prototype.home = function () {
+    };
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/medTap/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Data" tabIcon="person"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Alergies" tabIcon="alert"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="Diseases" tabIcon="md-medkit"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/medTap/src/pages/tabs/tabs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/med-tap/src/pages/tabs/tabs.html"*/'<ion-tabs selectedIndex="1">\n  <ion-tab [root]="tab1Root" tabTitle="" tabIcon="md-arrow-dropleft" (click)="home()"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="" tabIcon="information-circle" ></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="" tabIcon="md-key"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/med-tap/src/pages/tabs/tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsPage);
@@ -83,7 +85,7 @@ var TabsPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlergiesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -101,9 +103,9 @@ var AlergiesPage = /** @class */ (function () {
     }
     AlergiesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-alergies',template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/medTap/src/pages/alergies/alergies.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Alergies\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/medTap/src/pages/alergies/alergies.html"*/
+            selector: 'page-alergies',template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/med-tap/src/pages/alergies/alergies.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Alergies\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/med-tap/src/pages/alergies/alergies.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], AlergiesPage);
     return AlergiesPage;
 }());
@@ -118,7 +120,7 @@ var AlergiesPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiseasesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -132,23 +134,77 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DiseasesPage = /** @class */ (function () {
-    function DiseasesPage(navCtrl, nfc, ndef) {
+    function DiseasesPage(navCtrl, nfc, ndef, alertCtrl) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.nfc = nfc;
         this.ndef = ndef;
+        this.alertCtrl = alertCtrl;
         this.checkedDiseases = [];
         this.diseases = ['AIDS', 'Anthrax', 'Arthritis', 'Arthritis It\'s Your Health', 'Asthma', 'Bovine Spongiform Encephalopathy ("Mad Cow Disease")', 'Cancer', 'Cardiovascular Disease', 'Celiac Disease', 'C. difficile (Clostridium difficile)', 'Chlamydia', 'Chronic Diseases', 'Chronic Obstructive Pulmonary Disease (COPD)', 'Clostridium difficile (C. difficile)', 'Creutzfeldt-Jakob Disease (human form of "Mad Cow Disease")', 'Dengue Fever', 'Diabetes', 'E. coli (Escherichia coli) infection', 'Flesh-Eating (Necrotizing Fasciitis) Disease', 'Food Allergies and Intolerances', 'Food-Related Illnesses', 'Genital Herpes', 'Gonorrhoea', 'Heart Disease', 'Hepatitis', 'Human Papillomavirus (HPV)', 'Infant Botulism', 'Infectious Diseases', 'Influenza (Flu)', 'Lupus', 'Lyme Disease', 'Lymphogranuloma venereum (LGV)', 'Mad Cow Disease (BSE)', 'Malaria', 'Measles', 'Meningococcal Disease', 'Mental Health', 'Necrotizing Fasciitis/Mytositis ("Flesh-eating Disease")', 'Obesity', 'Osteoarthritis', 'Osteoporosis', 'Rabies', 'Reye\'s Syndrome', 'Sexually Transmitted Infections', 'Stroke', 'Sudden Infant Death Syndrome (SIDS)', 'Syphilis', 'Tuberculosis (TB)', 'West Nile Virus', 'Yellow Fever'];
-        nfc.write(this.checkedDiseases).then(function (data) {
-            console.log('Data saved to NFC');
-            console.log(data);
-        });
+        this.readingTag = false;
+        this.writingTag = false;
+        this.isWriting = false;
+        this.nfcMsg = '';
+        this.subscriptions = new Array();
+        this.subscriptions.push(this.nfc.addNdefListener()
+            .subscribe(function (data) {
+            if (!_this.isWriting) {
+                _this.isWriting = true;
+                _this.nfc.write([_this.nfcMsg])
+                    .then(function () {
+                    _this.writingTag = false;
+                    _this.isWriting = false;
+                    console.log("written");
+                    var alert = _this.alertCtrl.create({
+                        title: 'Diseases Saved',
+                        subTitle: _this.checkedDiseases.length + ' diseases saved to your card.',
+                        buttons: ['Ok']
+                    });
+                    alert.present();
+                })
+                    .catch(function (err) {
+                    console.log('ERROR writing');
+                    console.log(JSON.stringify(err));
+                    var alert = _this.alertCtrl.create({
+                        title: 'Error Writing',
+                        subTitle: err,
+                        buttons: ['Ok']
+                    });
+                    alert.present();
+                    _this.writingTag = false;
+                    _this.isWriting = false;
+                });
+            }
+        }, function (err) {
+        }));
     }
+    DiseasesPage.prototype.saveToCard = function () {
+        var checkedDiseasesString = ''; //JSON.stringify(this.checkedDiseases);
+        var _self = this;
+        this.checkedDiseases.forEach(function (val, i) {
+            checkedDiseasesString += _self.diseases[i] + ',';
+        });
+        console.log(checkedDiseasesString);
+        this.writingTag = true;
+        this.nfcMsg = this.ndef.textRecord(checkedDiseasesString, "en", null);
+        console.log(this.nfcMsg);
+    };
+    DiseasesPage.prototype.ionViewWillLeave = function () {
+        this.subscriptions.forEach(function (sub) {
+            sub.unsubscribe();
+        });
+    };
+    DiseasesPage.prototype.readTag = function () {
+        this.readingTag = true;
+    };
     DiseasesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-diseases',template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/medTap/src/pages/diseases/diseases.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Diseases\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-list>\n      \n\n        <ion-item *ngFor="let disease of diseases">\n          <ion-label>{{disease}}</ion-label>\n          <ion-checkbox [(ngModel)]="checkedDiseases[]"></ion-checkbox>\n        </ion-item>\n      </ion-list>\n      <button ion-button full (click)="save">Save to Card</button>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/medTap/src/pages/diseases/diseases.html"*/
+            selector: 'page-diseases',template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/med-tap/src/pages/diseases/diseases.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Diseases\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-list>\n      \n\n        <ion-item *ngFor="let disease of diseases; let i = index">\n          <ion-label>{{disease}}</ion-label>\n          <ion-checkbox [(ngModel)]="checkedDiseases[i]" ></ion-checkbox>\n        </ion-item>\n      </ion-list>\n      <button ion-button full (click)="saveToCard()">Save to Card</button>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/med-tap/src/pages/diseases/diseases.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["a" /* NFC */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["b" /* Ndef */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["a" /* NFC */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["b" /* Ndef */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], DiseasesPage);
     return DiseasesPage;
 }());
@@ -163,7 +219,7 @@ var DiseasesPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -177,35 +233,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, nfc, ndef) {
+    function HomePage(navCtrl, nfc, ndef, alertCtrl) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.nfc = nfc;
         this.ndef = ndef;
-        this.patientData = { name: 'Erik', birthdate: '10/09/1992', alergies: 'Penicillin' };
-        this.nfc.addNdefListener(function () {
-            console.log('successfully attached ndef listener');
+        this.alertCtrl = alertCtrl;
+        this.readingTag = true;
+        this.ndefMsg = '';
+        this.subscriptions = new Array();
+        var _self = this;
+        this.subscriptions.push(this.nfc.addNdefListener()
+            .subscribe(function (data) {
+            console.log(data);
+            _self.navCtrl.setRoot('TabsPage');
+            // let payload = data.tag.ndefMessage[0].payload;
+            //let tagContent = this.nfc.bytesToString(payload).substring(3);
+            //this.readingTag = false;
+            console.log("TAG LOADED");
+            // console.log(tagContent);
         }, function (err) {
-            console.log('error attaching ndef listener', err);
-        }).subscribe(function (event) {
-            console.log('received ndef message. the tag contains: ', event.tag);
-            console.log('decoded tag id', _this.nfc.bytesToHexString(event.tag.id));
-            var message = _this.ndef.textRecord('Hello world');
-            _this.nfc.share([message]).then(_this.onSuccess).catch(_this.onError);
-        });
+            var alert = _this.alertCtrl.create({
+                title: 'Error Reading',
+                subTitle: err,
+                buttons: ['Ok']
+            });
+            alert.present();
+        }));
     }
-    HomePage.prototype.onSuccess = function (data) {
-        console.log(data);
-    };
-    HomePage.prototype.onError = function (data) {
-        console.log(data);
+    HomePage.prototype.ionViewWillLeave = function () {
+        this.subscriptions.forEach(function (sub) {
+            sub.unsubscribe();
+        });
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/medTap/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  asdf\n  <h2>{{patientData.name}}</h2><br/>\n  <b>{{patientData.birthdate}}</b><br/>\n  <b>{{patientData.alergies}}</b><br/>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/medTap/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/med-tap/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      <img src="assets/imgs/icon.png">\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <img src="assets/imgs/logo.png">\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/med-tap/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["a" /* NFC */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["b" /* Ndef */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["a" /* NFC */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["b" /* Ndef */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], HomePage);
     return HomePage;
 }());
@@ -220,7 +287,7 @@ var HomePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -242,9 +309,9 @@ var DataPage = /** @class */ (function () {
     }
     DataPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/medTap/src/pages/data/data.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  asdf\n  <h2>{{patientData.name}}</h2><br/>\n  <b>{{patientData.birthdate}}</b><br/>\n  <b>{{patientData.alergies}}</b><br/>\n</ion-content>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/medTap/src/pages/data/data.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/med-tap/src/pages/data/data.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Data</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  \n \n</ion-content>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/med-tap/src/pages/data/data.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["a" /* NFC */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["b" /* Ndef */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["a" /* NFC */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_nfc__["b" /* Ndef */]])
     ], DataPage);
     return DataPage;
 }());
@@ -273,8 +340,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_alergies_alergies__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_diseases_diseases__ = __webpack_require__(196);
@@ -317,11 +384,11 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: []
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_alergies_alergies__["a" /* AlergiesPage */],
@@ -333,7 +400,7 @@ var AppModule = /** @class */ (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_9__ionic_native_nfc__["a" /* NFC */], __WEBPACK_IMPORTED_MODULE_9__ionic_native_nfc__["b" /* Ndef */]
             ]
         })
@@ -351,7 +418,7 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(194);
@@ -371,7 +438,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MyApp = /** @class */ (function () {
     function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */]; //HomePage;
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -380,9 +447,9 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/medTap/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/medTap/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/rodrigosoares/Rodrigo/med-tap/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/rodrigosoares/Rodrigo/med-tap/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());

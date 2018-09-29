@@ -1,0 +1,63 @@
+{
+    "Basic-Information":
+        {
+            "patient-ID": "999 222 111",
+            "health-region": "Saskatchewan Health Authority",
+            "bloodtype": "AB-positive",
+            "organ-donor": "",
+            "family-doctor": "Dr. Doctorson",
+            "do-not-resuscitate": "Do Not Resuscitate"
+        },
+    "Chronic-Conditions":   [
+        {
+            "name":"Type 2 Diabetes",
+            "treatments":"Dietary, Insulin not necessary"
+        },
+        {
+            "name":"Alzheimer's disease",
+            "treatments":""
+        }
+    ],
+    "Allergies":    [
+        {
+            "name": "Bees",
+            "emergency-treatment":"Administer epinephrine"
+        },
+        {
+            "name":"Peanuts",
+            "emergency-treatment":"Administer epinephrine"
+        }
+    ],
+    "Critical History": [
+
+    ],
+    "Surgeries":    [
+        {
+            "name":"Appendectomy",
+            "date":"16/09/2018",
+            "reason":"Appendicitis",
+            "notes":""
+        }
+    ],
+    "Implants": [
+
+    ],
+    "Immunizations": [
+        "Diptheria",
+        "Acellular Pertussis",
+        "Polio",
+        "Rotarix",
+        "Measles",
+        "Mumps",
+        "Rubella",
+        "Varicella",
+        "Hepatitis B",
+        "Human Papillomavirus"
+    ],
+    "Additional-Medications":   [
+        "Lisinopril"
+    ],
+    "Living-Will":  [
+
+    ]
+}
