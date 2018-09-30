@@ -1,0 +1,409 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/imgs/icon.png"/>
+      {{patientId}}
+    </ion-title>
+    <ion-buttons  side="right">  
+      <button menuToggle side="right" menuToggle="right" >
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+  
+<ion-content >
+      <div *ngIf="is_doctor;then confidential else restrict"></div >
+      <ng-template #confidential>
+        <ion-item-group>
+            <ion-item-divider color="light">  MY HEALTHEVET PERSONAL INFORMATION REPORT </ion-item-divider>
+          <ion-item-divider color="danger">CONFIDENTIAL</ion-item-divider>
+          <ion-item>
+            <h2>Produced by the VA Blue Button (v12.10)</h2>
+            <p item-end>05 Nov 2014 @ 0827</p>
+          </ion-item>
+          <ion-item>
+            <p  item-end>This summary is a copy of information from your My HealtheVet Personal
+                Health Record. Your summary may include:
+                - information that you entered (self reported)
+                - information from your VA health record
+                - your military service information from the department of defense (DoD).</p>
+          </ion-item>
+          <ion-item>
+            <h2>Key</h2>
+            <p item-end>Double dashes (--) mean there is no information to display.</p>
+          </ion-item>
+          <ion-item>
+            <h2>Name</h2>
+            <p item-end>MHVTESTVETERAN, ONE A</p>
+          </ion-item>
+          <ion-item>
+            <h2>Date of Birth</h2>
+            <p item-end>01 Mar 1948</p>
+          </ion-item>
+        </ion-item-group>
+        <ion-item-group>
+          <ion-item-divider color="light">DOWNLOAD REQUEST SUMMARY</ion-item-divider>
+          <ion-item><h2>Produced by the VA Blue Button (v12.10)</h2><p item-end>05 Nov 2014 @ 0827</p></ion-item>
+          <ion-item><h2>System Request Date/Time</h2><p item-end>05 Nov 2014 @ 0827</p></ion-item>
+          <ion-item><h2>File Name</h2><p item-end>mhv_MHVTESTVETERAN_20141105_0827.txt</p></ion-item>
+          <ion-item><h2>Date Range Selected</h2><p item-end>05 Nov 2009 to 05 Nov 2014</p></ion-item>
+          <ion-item><h2>Data Types Selected</h2><p item-end></p></ion-item>
+          <ion-item><h2>My HealtheVet Account Summary</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Demographics</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Demographics</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Health Care Providers</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Treatment Facilities</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Health Insurance</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Wellness Reminders</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Appointments (Future)</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Appointments (Limited to past 2 years)</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Allergies</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Allergies</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Medication History</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Medications and Supplements</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Problem List</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Admissions and Discharges</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Notes</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Medical Events</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Immunizations</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Immunizations</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Laboratory Results</h2><p item-end>Chemistry/Hematology/Microbiology</p></ion-item>
+          <ion-item><h2>VA Pathology Reports</h2><p item-end>Surgical Pathology/Cytology/Electron Microscopy</p></ion-item>
+          <ion-item><h2>Self Reported Labs and Tests</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Vitals and Readings</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Vitals and Readings</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Radiology Reports</h2><p item-end></p></ion-item>
+          <ion-item><h2>VA Electrocardiogram (EKG) Reports</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Family Health History</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Military Health History</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Activity Journal</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported Food Journal</h2><p item-end></p></ion-item>
+          <ion-item><h2>DoD Military Service Information</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported My Goals Current</h2><p item-end></p></ion-item>
+          <ion-item><h2>Self Reported My Goals Completed </h2><p item-end></p></ion-item>
+
+
+      
+          <ion-item-divider color="light"> MY HEALTHEVET ACCOUNT SUMMARY </ion-item-divider>
+          <ion-item><h2>Source</h2><p item-end>VA</p></ion-item>
+          <ion-item><h2>Authentication Status:</h2><p item-end> Authenticated</p></ion-item>
+          <ion-item><h2>Authentication Date:</h2><p item-end>   18 May 2011</p></ion-item>
+          <ion-item><h2>Authentication Facility ID</h2><p item-end>   648</p></ion-item>
+          <ion-item><h2>Authentication Facility Name</h2><p item-end>  PORTLAND, OREGON VA MEDICAL CENTER</p></ion-item>
+          
+          <ion-item-divider>VA Treating Facility                     Type</ion-item-divider>
+          <ion-item><h2>PORTLAND, OREGON VA MEDICAL CENTER </h2><p item-end>na</p></ion-item>
+          <ion-item><h2>AUSTIN PSIM                     </h2><p item-end>na</p></ion-item>
+          <ion-item><h2>SPOKANE VAMC                      </h2><p item-end> na</p></ion-item>
+          <ion-item><h2>SURGERY QUALITY WORKFLOW MGMT      </h2><p item-end> na</p></ion-item>
+          <ion-item><h2>VA SOUTHERN OREGON REHABILITATION CENTER </h2><p item-end>na</p></ion-item>
+          <ion-item><h2>ENROLLMENT SYSTEM REENGINEERING     </h2><p item-end>na</p></ion-item>
+          <ion-item><h2>AUSTIN MHV                        </h2><p item-end>  na</p></ion-item>
+          
+          <ion-item-divider color="light"> SELF REPORTED DEMOGRAPHICS </ion-item-divider>
+          <ion-item><h2>Source</h2><p item-end> Self-Entered</p></ion-item>
+          <ion-item><h2>Your self-entered information saved in My HealtheVet is not shared with </h2></ion-item>
+          <ion-item><h2>other sources. </h2></ion-item>
+          <ion-item><h2>First Name</h2><p item-end>         ONE</p></ion-item>
+          <ion-item><h2>Middle Initial</h2><p item-end>     A</p></ion-item>
+          <ion-item><h2>Last Name</h2><p item-end>          MHVTESTVETERAN</p></ion-item>
+          <ion-item><h2>Suffix</h2><p item-end>             </p></ion-item>
+          <ion-item><h2>Alias</h2><p item-end>              MHVVET</p></ion-item>
+          <ion-item><h2>Relationship to VA</h2><p item-end> Patient, Veteran</p></ion-item>
+          <ion-item><h2>Gender</h2><p item-end> Male       </p></ion-item>
+          <ion-item><h2>Blood Type</h2><p item-end> AB+    </p></ion-item>
+          <ion-item><h2>Organ Donor</h2><p item-end>Yes</p></ion-item>
+          <ion-item><h2>Date of Birth</h2><p item-end>      01 Mar 1948</p></ion-item>
+          <ion-item><h2>Marital Status</h2><p item-end>     Married</p></ion-item>
+          <ion-item><h2>Current Occupation</h2><p item-end> Truck Driver</p></ion-item>
+          <ion-item><h2>Mailing or Destination Address</h2><p item-end>         123 Anywhere Road</p></ion-item>
+          <ion-item><h2>Mailing or Destination Address2</h2><p item-end>        Apt. 123</p></ion-item>
+          <ion-item><h2>Mailing or Destination City</h2><p item-end>            Anywhere</p></ion-item>
+          <ion-item><h2>Mailing or Destination State</h2><p item-end>           DC</p></ion-item>
+          <ion-item><h2>Mailing or Destination Country</h2><p item-end>         United States</p></ion-item>
+          <ion-item><h2>Mailing or Destination Province</h2><p item-end>        </p></ion-item>
+          <ion-item><h2>Mailing or Destination Zip/Postal Code</h2><p item-end> 00000</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> 000-555-2123</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> 000-555-4100</p></ion-item>
+          <ion-item><h2>Pager Number</h2><p item-end>      000-555-2020</p></ion-item>
+          <ion-item><h2>Cell Phone Number</h2><p item-end> 000-555-0303</p></ion-item>
+          <ion-item><h2>FAX Number</h2><p item-end>        000-555-4110</p></ion-item>
+          <ion-item><h2>Email Address</h2><p item-end>               mhvveteran@emailaddress.com</p></ion-item>
+          <ion-item><h2>Preferred Method of Contact</h2><p item-end> Email</p></ion-item>
+          
+          
+          <ion-item><h2>EMERGENCY CONTACTS</h2></ion-item>
+          <ion-item><h2>Contact First Name</h2><p item-end> Two</p></ion-item>
+          <ion-item><h2>Contact Last Name</h2><p item-end>  MHVVeteran</p></ion-item>
+          <ion-item><h2>Relationship</h2><p item-end>       </p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end>  000-555-2121</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end>  000-555-1000  </p></ion-item>
+          <ion-item><h2>Extension</h2><p item-end></p></ion-item>
+          <ion-item><h2>Cell Phone Number</h2><p item-end>  000-555-1855</p></ion-item>
+          <ion-item><h2>Address Line 1</h2><p item-end>     123 Anywhere Road</p></ion-item>
+          <ion-item><h2>Address Line 2</h2><p item-end>     Apt 123</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>               Anywhere</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>              DC</p></ion-item>
+
+          
+
+          <ion-item><h2>Country</h2><p item-end>            United States</p></ion-item>
+          <ion-item><h2>Province</h2><p item-end>           </p></ion-item>
+          <ion-item><h2>Zip/Post Code</h2><p item-end>      00000</p></ion-item>
+          <ion-item><h2>Email Address</h2><p item-end>      mhvveterantwo@emailaddress.com</p></ion-item>
+          <ion-item><h2>Contact First Name</h2><p item-end> Three</p></ion-item>
+          <ion-item><h2>Contact Last Name</h2><p item-end>  MHVVeteran</p></ion-item>
+          <ion-item><h2>Relationship</h2><p item-end>       </p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end>  000-555-2339</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end>  000-555-5000  </p></ion-item>
+          <ion-item><h2>Cell Phone Number</h2><p item-end>  000-555-1458</p></ion-item>
+          
+          <ion-item><h2>Address Line 1</h2><p item-end>     123 Anwhere Road</p></ion-item>
+          <ion-item><h2>Address Line 2</h2><p item-end>     Apt 123</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>               Anywhere</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>              DC</p></ion-item>
+          <ion-item><h2>Country</h2><p item-end>            United States</p></ion-item>
+          <ion-item><h2>Province</h2><p item-end>           </p></ion-item>
+          <ion-item><h2>Zip/Post Code</h2><p item-end>      00000</p></ion-item>
+          <ion-item><h2>Email Address</h2><p item-end>      mhvveteranthree@emailaddress.com</p></ion-item>
+          
+          
+          <ion-item-divider color="light">VA DEMOGRAPHICS </ion-item-divider>
+          <ion-item><h2>Source</h2><p item-end>       VA</p></ion-item>
+          <ion-item><h2>Last Updated</h2><p item-end> 05 Nov 2014 @ 0813</p></ion-item>
+          <ion-item><h2>Sorted By</h2><p item-end>    VA Treating Facility</p></ion-item>
+          <ion-item><h2>Your information in My HealtheVet is not transferred to your VA Health </h2></ion-item>
+          <ion-item><h2>Record. Also, VA Demographic information is not updated between VA </h2></ion-item>
+          <ion-item><h2>treating facilities. If you have any questions or updates, please contact </h2></ion-item>
+          <ion-item><h2>your VA health care team. </h2></ion-item>
+          
+          
+          <ion-item-divider color="danger"><h2>VA Treating Facility</h2><p item-end>VA SOUTHERN OREGON REHABILITATION CENTER CLINICS</p></ion-item-divider>
+          <ion-item><h2>First Name</h2><p item-end>         ONE</p></ion-item>
+          <ion-item><h2>Middle Name</h2><p item-end>        A</p></ion-item>
+          <ion-item><h2>Last Name</h2><p item-end>          MHVTESTVETERAN</p></ion-item>
+          <ion-item><h2>Religion</h2><p item-end>           --</p></ion-item>
+          <ion-item><h2>Ethnicity</h2><p item-end>          --</p></ion-item>
+          <ion-item><h2>Date of Birth</h2><p item-end>      01 Mar 1948</p></ion-item>
+          <ion-item><h2>Place of Birth</h2><p item-end>     WASHINGTON, DISTRICT OF COLUMBIA</p></ion-item>
+          <ion-item><h2>Age</h2><p item-end>                66</p></ion-item>
+          <ion-item><h2>Gender</h2><p item-end>             Male</p></ion-item>
+          <ion-item><h2>Marital Status</h2><p item-end>     DIVORCED</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+
+          <ion-item><h2>PERMANENT ADDRESS AND CONTACT INFORMATION</h2></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    123 ANYWHERE RD</p></ion-item>
+          <ion-item><h2>Street Address 2</h2><p item-end>  APT 123</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              WASHINGTON</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             DISTRICT OF COLUMBIA</p></ion-item>
+          <ion-item><h2>Zip Code</h2><p item-end>          00000</p></ion-item>
+          <ion-item><h2>County</h2><p item-end>            001</p></ion-item>
+          <ion-item><h2>Country</h2><p item-end>           USA</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Cell Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Email Address</h2><p item-end>     MHVVETERAN@EMAILADDRESS.COM</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          
+          <ion-item><h2>ELIGIBILITY</h2></ion-item>
+          <ion-item><h2>Primary Eligibility Code</h2><p item-end>     --</p></ion-item>
+          <ion-item><h2>Service Connected Percentage</h2><p item-end> 70</p></ion-item>
+          <ion-item><h2>EMPLOYMENT</h2></ion-item>
+          <ion-item><h2>Employment Status</h2><p item-end>NOT EMPLOYED</p></ion-item>
+          <ion-item><h2>Employer Name</h2><p item-end>    --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>ACTIVE INSURANCE           </h2></ion-item>
+          <ion-item><h2>Insurance Company</h2><p item-end>       --</p></ion-item>
+          <ion-item><h2>Effective Date</h2><p item-end>          --</p></ion-item>
+          <ion-item><h2>Expiration Date</h2><p item-end>         --</p></ion-item>
+          <ion-item><h2>Group Name</h2><p item-end>              --</p></ion-item>
+          <ion-item><h2>Group Number</h2><p item-end>            --</p></ion-item>
+          <ion-item><h2>Subscriber ID</h2><p item-end>           --</p></ion-item>
+          <ion-item><h2>Subscriber Name</h2><p item-end>         --</p></ion-item>
+          <ion-item><h2>Subscriber Relationship</h2><p item-end> --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>PRIMARY NEXT OF KIN  </h2></ion-item>
+          <ion-item><h2>Name</h2><p item-end>              MHVVETERAN, TWO</p></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    123 Anywhere Road</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              ANYWHERE</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             DC</p></ion-item>
+          <ion-item><h2>Zip Code</h2><p item-end>          00000</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> 000-444-1952</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>EMERGENCY CONTACT     </h2></ion-item>
+          <ion-item><h2>Name</h2><p item-end>              MHVVETERAN, TWO</p></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    123 Anywhere Road</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              ANYWHERE</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             DC</p></ion-item>
+          <ion-item><h2>Zip Code</h2><p item-end>          00000</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> 000-444-1952</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>VA GUARDIAN          </h2></ion-item>
+          <ion-item><h2>Name</h2><p item-end>              --                      </p></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    --</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              --</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             --</p></ion-item>
+          <ion-item><h2>Zip Code</h2><p item-end>          --</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>CIVIL GUARDIAN  </h2></ion-item>
+          <ion-item><h2>Name</h2><p item-end>              --</p></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    --</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              --</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             --</p></ion-item>
+          <ion-item><h2>Zip Code</h2><p item-end>          --</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item-divider color="danger"><h2>VA Treating Facility</h2><p item-end>SPOKANE VAMC</p></ion-item-divider>
+          <ion-item><h2>First Name</h2><p item-end>         ONE</p></ion-item>
+          <ion-item><h2>Middle Name</h2><p item-end>        A</p></ion-item>
+          <ion-item><h2>Last Name</h2><p item-end>          MHVTESTVETERAN</p></ion-item>
+          <ion-item><h2>Religion</h2><p item-end>           --</p></ion-item>
+          <ion-item><h2>Ethnicity</h2><p item-end>          --</p></ion-item>
+          <ion-item><h2>Date of Birth</h2><p item-end>      01 Mar 1948</p></ion-item>
+          <ion-item><h2>Place of Birth</h2><p item-end>     WASHINGTON, DISTRICT OF COLUMBIA</p></ion-item>
+          <ion-item><h2>Age</h2><p item-end>                66</p></ion-item>
+          <ion-item><h2>Gender</h2><p item-end>             Male</p></ion-item>
+          <ion-item><h2>Marital Status</h2><p item-end>     DIVORCED</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>PERMANENT ADDRESS AND CONTACT INFORMATION</h2></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    123 ANYWHERE RD</p></ion-item>
+          <ion-item><h2>Street Address 2</h2><p item-end>  APT 123</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              WASHINGTON</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             DISTRICT OF COLUMBIA</p></ion-item>
+          <ion-item><h2>Zip Code</h2><p item-end>          00000</p></ion-item>
+          <ion-item><h2>County</h2><p item-end>            001</p></ion-item>
+          <ion-item><h2>Country</h2><p item-end>           USA</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Cell Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Email Address</h2><p item-end>     MHVVETERAN@EMAILADDRESS.COM</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>ELIGIBILITY</h2></ion-item>
+          <ion-item><h2>Primary Eligibility Code</h2><p item-end>     --</p></ion-item>
+          <ion-item><h2>Service Connected Percentage</h2><p item-end> 70</p></ion-item>
+          <ion-item><h2>EMPLOYMENT</h2></ion-item>
+          <ion-item><h2>Employment Status</h2><p item-end>NOT EMPLOYED</p></ion-item>
+          <ion-item><h2>Employer Name</h2><p item-end>    --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>ACTIVE INSURANCE           </h2></ion-item>
+          <ion-item><h2>Insurance Company</h2><p item-end>       --</p></ion-item>
+          <ion-item><h2>Effective Date</h2><p item-end>          --</p></ion-item>
+          <ion-item><h2>Expiration Date</h2><p item-end>         --</p></ion-item>
+          <ion-item><h2>Group Name</h2><p item-end>              --</p></ion-item>
+          <ion-item><h2>Group Number</h2><p item-end>            --</p></ion-item>
+          <ion-item><h2>Subscriber ID</h2><p item-end>           --</p></ion-item>
+          <ion-item><h2>Subscriber Name</h2><p item-end>         --</p></ion-item>
+          <ion-item><h2>Subscriber Relationship</h2><p item-end> --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>PRIMARY NEXT OF KIN </h2></ion-item>
+          <ion-item><h2>Name</h2><p item-end>              MHVVETERAN, TWO</p></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    123 Anywhere Road</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              ANYWHERE</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             DC</p></ion-item>
+          <ion-item><h2>Zip Code</h2><p item-end>          00000</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> 000-444-1952</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>EMERGENCY CONTACT   </h2></ion-item>
+          <ion-item><h2>Name</h2><p item-end>              MHVVETERAN, TWO</p></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    123 Anywhere Road</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              ANYWHERE</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             DC</p></ion-item>
+          <ion-item><h2>Zip Code</h2><p item-end>          00000</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> 000-444-1952</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>VA GUARDIAN          </h2></ion-item>
+          <ion-item><h2>Name</h2><p item-end>              --                      </p></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    --</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              --</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             --</p></ion-item>
+          <ion-item><h2>Zip Code</h2><p item-end>          --</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>CIVIL GUARDIAN </h2></ion-item>
+          <ion-item><h2>Name</h2><p item-end>              --</p></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    --</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              --</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             --</p></ion-item>
+          <ion-item><h2>Zip Code</h2><p item-end>          --</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          
+          <ion-item-divider color="danger"><h2>VA Treating Facility</h2><p item-end>PORTLAND, OREGON VA MEDICAL CENTER</p></ion-item-divider>
+          
+          <ion-item><h2>First Name</h2><p item-end>         ONE</p></ion-item>
+          <ion-item><h2>Middle Name</h2><p item-end>        A</p></ion-item>
+          <ion-item><h2>Last Name</h2><p item-end>          MHVTESTVETERAN</p></ion-item>
+          <ion-item><h2>Religion</h2><p item-end>           --</p></ion-item>
+          <ion-item><h2>Ethnicity</h2><p item-end>          --</p></ion-item>
+          <ion-item><h2>Date of Birth</h2><p item-end>      01 Mar 1948</p></ion-item>
+          <ion-item><h2>Place of Birth</h2><p item-end>     WASHINGTON, DISTRICT OF COLUMBIA</p></ion-item>
+          <ion-item><h2>Age</h2><p item-end>                66</p></ion-item>
+          <ion-item><h2>Gender</h2><p item-end>             Male</p></ion-item>
+          <ion-item><h2>Marital Status</h2><p item-end>     DIVORCED</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+
+          <ion-item><h2>PERMANENT ADDRESS AND CONTACT INFORMATION</h2></ion-item>
+          <ion-item><h2>Street Address</h2><p item-end>    123 ANYWHERE RD</p></ion-item>
+          <ion-item><h2>Street Address 2</h2><p item-end>  APT 123</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>City</h2><p item-end>              WASHINGTON</p></ion-item>
+          <ion-item><h2>State</h2><p item-end>             DISTRICT OF COLUMBIA</p></ion-item>
+          
+          <ion-item><h2>Zip Code</h2><p item-end>          00000</p></ion-item>
+          <ion-item><h2>County</h2><p item-end>            001</p></ion-item>
+          <ion-item><h2>Country</h2><p item-end>           USA</p></ion-item>
+          <ion-item><h2>Home Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Work Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Cell Phone Number</h2><p item-end> --</p></ion-item>
+          <ion-item><h2>Email Address</h2><p item-end>     MHVVETERAN@EMAILADDRESS.COM</p></ion-item>
+          
+          <ion-item-divider color="light"></ion-item-divider>
+          <ion-item><h2>ELIGIBILITY</h2></ion-item>
+          <ion-item><h2>Primary Eligibility Code</h2><p item-end>     --</p></ion-item>
+          <ion-item><h2>Service Connected Percentage</h2><p item-end> 0</p></ion-item>
+          <ion-item><h2>EMPLOYMENT</h2></ion-item>
+          <ion-item><h2>Employment Status</h2><p item-end>NOT EMPLOYED</p></ion-item>
+          <ion-item><h2>Employer Name</h2><p item-end>    --</p></ion-item>
+          <ion-item-divider color="light"></ion-item-divider>
+          
+          <ion-item><h2>ACTIVE INSURANCE            </h2></ion-item>
+          <ion-item><h2>Insurance Company</h2><p item-end>       --</p></ion-item>
+          <ion-item><h2>Effective Date</h2><p item-end>          --</p></ion-item>
+          <ion-item><h2>Expiration Date</h2><p item-end>         --</p></ion-item>
+          <ion-item><h2>Group Name</h2><p item-end>              --</p></ion-item>
+          <ion-item><h2>Group Number</h2><p item-end>    ...</p></ion-item>
+          
+
+        </ion-item-group>
+      </ng-template>
+      <ng-template #restrict>
+        <h2 class="protected-message">Contact your doctor to access this information</h2><br/>
+        <img src="assets/imgs/medtap_tapnow.png" class="tap-now"/>
+      </ng-template>
+</ion-content>

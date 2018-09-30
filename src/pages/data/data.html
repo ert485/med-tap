@@ -1,10 +1,81 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Data</ion-title>
+    <ion-title>
+      <img src="assets/imgs/icon.png"/>
+      {{patientId}}
+    </ion-title>
+    <ion-buttons  side="right">  
+        <button menuToggle side="right" menuToggle="right" >
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
   
+<ion-content >
+  <ion-item-group>
+    <ion-item-divider color="light">BASIC INFORMATION</ion-item-divider>
+    <ion-item>
+      <h2>HEALTH REGION</h2>
+      <p item-end>SK</p>
+    </ion-item>
+    <ion-item>
+      <h2>BLOODTYPE</h2>
+      <p item-end>AB+</p>
+    </ion-item>
+    <ion-item>
+      <h2>ORGAN DONOR STATUS</h2>
+      <p item-end>NO</p>
+    </ion-item>
+    <ion-item>
+      <h2>FAMILY DOCTOR</h2>
+      <p item-end>Dr. Doctorson</p>
+    </ion-item>
+    <ion-item>
+      <h2>DO NOT RESUSCITATE</h2>
+    </ion-item>
+    
+    <ion-item-divider color="light">ALLERGIES</ion-item-divider>
+    <ion-item><h2>IMIPRAMINE</h2></ion-item>
+    <ion-item><h2>TRIMETHOPRIM</h2></ion-item>
+    <ion-item><h2>TRAMADOL</h2></ion-item>
+    <ion-item><h2>TERAZOSIN</h2></ion-item>
+    <ion-item><h2>BACTRIM</h2></ion-item>
+    <ion-item><h2>METHOCARBAMOL</h2></ion-item>
+
+    <ion-item-divider color="light">ACTIVE MEDICATION</ion-item-divider>
+    <ion-item><h2>ASPIRIN</h2>
+      <p item-end>81MG EC TAB</p>
+    </ion-item>
+    <ion-item><h2>ASPIRIN</h2>
+      <p item-end>325MG EC TAB</p>
+    </ion-item>
+    
+    <ion-item-divider color="light">CHRONIC CONDITIONS</ion-item-divider>
+    <ion-item><h2>DIABETES </h2>
+      <p item-end>TYPE 2</p>
+    </ion-item>
+    <ion-item><h2>DISEASE</h2>
+      <p item-end>ALZHEIMER'S</p>
+    </ion-item>
+    
+    
+    <ion-item-divider color="light">SURGERIES</ion-item-divider>
+    <ion-item><h2>APPENDECTOMY </h2>
+      <p item-end>16/09/2018</p>
+    </ion-item>
+    
+    <ion-item-divider color="light">IMMUNIZATIONS</ion-item-divider>
+    <ion-item><h2>DIPTHERIA </h2></ion-item>
+    <ion-item><h2>ACELLULAR PERTUSSIS </h2></ion-item>
+    <ion-item><h2>POLIO </h2></ion-item>
+    <ion-item><h2>ROTARIX </h2></ion-item>
+    <ion-item><h2>MEASLES </h2></ion-item>
+    <ion-item><h2>MUMPS </h2></ion-item>
+    <ion-item><h2>RUBELLS </h2></ion-item>
+    <ion-item><h2>VARICELLA </h2></ion-item>
+    <ion-item><h2>HEPATITIS B </h2></ion-item>
+
+  </ion-item-group>
  
 </ion-content>

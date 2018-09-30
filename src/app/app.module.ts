@@ -8,6 +8,8 @@ import { DiseasesPage } from '../pages/diseases/diseases';
 import { DataPage } from '../pages/data/data';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ProtectedPage } from '../pages/protected/protected';
+import { StorageData } from '../providers/storage-data';
 import { NFC, Ndef } from '@ionic-native/nfc';
 
 
@@ -21,7 +23,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DiseasesPage,
     DataPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ProtectedPage,
   ],
   imports: [
     BrowserModule,
@@ -34,13 +37,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DiseasesPage,
     DataPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ProtectedPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NFC, Ndef
+    NFC, Ndef,StorageData
   ]
 })
 export class AppModule {}

@@ -21,6 +21,26 @@ ion-header{
         ion-title{
             img{
                 width:45px;
+                margin-top:5px;
+            }
+        }
+    }
+}
+.tab-button{
+    ion-icon{
+        color: #f77d03 !important;
+        font-size: 30px !important;
+    }
+}
+ion-header{
+    ion-buttons{
+        float: right;
+        margin-top: -50px;
+        .bar-buttons {
+            background:transparent;
+            ion-icon{
+                color: #0a4db3;
+                font-size: 45px;
             }
         }
     }

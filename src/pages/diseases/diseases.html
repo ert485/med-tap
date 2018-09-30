@@ -1,15 +1,52 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Diseases
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <ion-title>
+        <img src="assets/imgs/icon.png"/>
+        {{patientId}}
+      </ion-title>
+      <ion-buttons  side="right">  
+          <button menuToggle side="right" menuToggle="right" >
+              <ion-icon name="menu"></ion-icon>
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
 
 <ion-content>
     <ion-list>
+        <ion-item>
+          <ion-label color="primary" floating>First Name</ion-label>
+          <ion-input [(ngModel)]="first_name"></ion-input>
+        </ion-item>
       
-
+        <ion-item>
+          <ion-label color="primary"  floating>Last Name</ion-label>
+          <ion-input   [(ngModel)]="last_name"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label color="primary" floating>Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" floating>Phone</ion-label>
+          <ion-input type="tel" [(ngModel)]="phone"> placeholder="+1 306 333-333"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Blood Type</ion-label>
+          <ion-select [(ngModel)]="bloodType">
+            <ion-option value="A+">A+</ion-option>
+            <ion-option value="A-">A-</ion-option>
+            <ion-option value="B+">B+</ion-option>
+            <ion-option value="B-">B-</ion-option>
+            <ion-option value="AB+">AB+</ion-option>
+            <ion-option value="AB-">AB-</ion-option>
+            <ion-option value="O+">O+</ion-option>
+            <ion-option value="O-">O-</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item-divider color="light">Diseases</ion-item-divider>
         <ion-item *ngFor="let disease of diseases; let i = index">
           <ion-label>{{disease}}</ion-label>
           <ion-checkbox [(ngModel)]="checkedDiseases[i]" ></ion-checkbox>

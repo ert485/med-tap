@@ -1,11 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      <img src="assets/imgs/icon.png">
+      <img src="assets/imgs/icon.png"/>
+      {{patientId}}
     </ion-title>
+    <ion-buttons  side="right">  
+        <button menuToggle side="right" menuToggle="right" >
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <img src="assets/imgs/logo.png">
+    <img src="assets/imgs/logo.png" class="logo"/><br/><br/>
+    <img src="assets/imgs/medtap_tapnow.png" class="tap-now"/>
 </ion-content>
