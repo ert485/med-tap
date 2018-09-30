@@ -68,7 +68,7 @@ export class MyApp {
               alert.present();  
               _self.storageData.recordMessage='';
             });
-            
+            _self.storageData.recordMessage='';
         }else{
           //this.readingTag = false;
           console.log("TAG LOADED");
@@ -78,26 +78,35 @@ export class MyApp {
             let tagContent = this.nfc.bytesToString(payload).substring(3);
             console.log(payload);
           }
+          _self.storageData.patientId='333 777 999';
           this.changeDetectorRef.detectChanges();
-          let views = _self.nav.getViews();
+          if(_self.storageData.alreadyReaded){
+            _self.storageData.isDoctor = true;
+            _self.nav.setRoot(TabsPage,{tabIndex:2});
+          }else{
+            _self.nav.setRoot(TabsPage,{tabIndex:1});
+          }
+          _self.storageData.alreadyReaded=true;
+          
+          /* let views = _self.nav.getViews();
           if(views.length>0){
             let lastView = views[views.length-1];
             console.log(lastView);
+            console.log(views);
             if(lastView.name!='TabsPage'){
               _self.nav.setRoot(TabsPage,{tabIndex:1});
             }else{
-              _self.storageData.patientId='333 777 999';
               _self.storageData.isDoctor = true;
               _self.nav.setRoot(TabsPage,{tabIndex:2});
             }   
           }else{
             _self.nav.setRoot(TabsPage,{tabIndex:1});
-          }
+          }*/
           
           setTimeout(function(){
             _self.changeDetectorRef.detectChanges();
             setTimeout(function(){
-         //     _self.startListener();
+          //    _self.startListener();
             },100);
           },100);
         }
